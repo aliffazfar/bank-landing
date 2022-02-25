@@ -3,7 +3,7 @@ import {
   ReactCompareSliderImage,
 } from 'react-compare-slider'
 
-import { LandingContainer } from '../styles/Landing.styles'
+import { LandingContainer } from '../assets/styles/Landing.styles'
 
 import img1 from '../assets/images/1.jpg'
 import img2 from '../assets/images/7.jpg'

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Hamburger from 'hamburger-react'
 import {
   NavbarContainer,
   LeftContainer,
@@ -10,15 +11,13 @@ import {
   Logo,
   OpenLinksButton,
   NavbarLinkExtended,
-} from '../styles/Navbar.styles'
+} from '../assets/styles/Navbar.styles'
 import LogoImg from '../assets/images/logo.png'
 
 const Navbar = () => {
   const [extendNavbar, setExtendNavbar] = useState(false)
 
-  const imageClick = () => {
-    console.log('Click')
-  }
+  const [isOpen, setOpen] = useState(false)
 
   return (
     <NavbarContainer extendNavbar={extendNavbar}>
@@ -30,16 +29,14 @@ const Navbar = () => {
         </LeftContainer>
         <RightContainer>
           <NavbarLinkContainer>
+            <NavbarLink to='/'> home</NavbarLink>
             <NavbarLink to='/about'> about</NavbarLink>
             <NavbarLink to='/portfolio'> portfolio</NavbarLink>
             <NavbarLink to='/resume'> resume</NavbarLink>
             <NavbarLink to='/contact'> contact</NavbarLink>
-            <OpenLinksButton
-              onClick={() => {
-                setExtendNavbar((curr) => !curr)
-              }}
-            >
-              {extendNavbar ? <>&#10005;</> : <> &#8801;</>}
+            <OpenLinksButton>
+              <Hamburger toggled={extendNavbar} toggle={setExtendNavbar} />
+              {/* {extendNavbar ? <>&#10005;</> : <Hamburger direction='right' />} */}
             </OpenLinksButton>
           </NavbarLinkContainer>
         </RightContainer>
