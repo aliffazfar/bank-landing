@@ -16,7 +16,7 @@ export const LeftContainer = styled.div`
   flex: 30%;
   display: flex;
   align-items: center;
-  padding-left: 25%;
+  padding-left: 10%;
 `
 
 export const RightContainer = styled.div`
