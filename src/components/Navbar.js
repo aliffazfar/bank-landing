@@ -16,11 +16,17 @@ import LogoImg from '../assets/images/logo.png'
 const Navbar = () => {
   const [extendNavbar, setExtendNavbar] = useState(false)
 
+  const imageClick = () => {
+    console.log('Click')
+  }
+
   return (
     <NavbarContainer extendNavbar={extendNavbar}>
       <NavbarInnerContainer>
         <LeftContainer>
-          <Logo src={LogoImg}></Logo>
+          <a href='/'>
+            <Logo src={LogoImg}></Logo>
+          </a>
         </LeftContainer>
         <RightContainer>
           <NavbarLinkContainer>
@@ -40,6 +46,7 @@ const Navbar = () => {
       </NavbarInnerContainer>
       {extendNavbar && (
         <NavbarExtendedContainer>
+          <NavbarLinkExtended to='/'> home</NavbarLinkExtended>
           <NavbarLinkExtended to='/about'> about</NavbarLinkExtended>
           <NavbarLinkExtended to='/portfolio'> portfolio</NavbarLinkExtended>
           <NavbarLinkExtended to='/resume'> resume</NavbarLinkExtended>
