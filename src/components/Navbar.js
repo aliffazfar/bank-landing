@@ -16,9 +16,9 @@ import LogoImg from '../assets/images/logo.png'
 
 const Navbar = () => {
   const [extendNavbar, setExtendNavbar] = useState(false)
-
-  const [isOpen, setOpen] = useState(false)
-
+  const closeSideBar = () => {
+    setExtendNavbar(false)
+  }
   return (
     <NavbarContainer extendNavbar={extendNavbar}>
       <NavbarInnerContainer>
@@ -36,6 +36,7 @@ const Navbar = () => {
             <NavbarLink to='/contact'> contact</NavbarLink>
             <OpenLinksButton>
               <Hamburger toggled={extendNavbar} toggle={setExtendNavbar} />
+
               {/* {extendNavbar ? <>&#10005;</> : <Hamburger direction='right' />} */}
             </OpenLinksButton>
           </NavbarLinkContainer>
@@ -43,11 +44,21 @@ const Navbar = () => {
       </NavbarInnerContainer>
       {extendNavbar && (
         <NavbarExtendedContainer>
-          <NavbarLinkExtended to='/'> home</NavbarLinkExtended>
-          <NavbarLinkExtended to='/about'> about</NavbarLinkExtended>
-          <NavbarLinkExtended to='/portfolio'> portfolio</NavbarLinkExtended>
-          <NavbarLinkExtended to='/resume'> resume</NavbarLinkExtended>
-          <NavbarLinkExtended to='/contact'> contact</NavbarLinkExtended>
+          <NavbarLinkExtended to='/' onClick={closeSideBar}>
+            home
+          </NavbarLinkExtended>
+          <NavbarLinkExtended to='/about' onClick={closeSideBar}>
+            about
+          </NavbarLinkExtended>
+          <NavbarLinkExtended to='/portfolio' onClick={closeSideBar}>
+            portfolio
+          </NavbarLinkExtended>
+          <NavbarLinkExtended to='/resume' onClick={closeSideBar}>
+            resume
+          </NavbarLinkExtended>
+          <NavbarLinkExtended to='/contact' onClick={closeSideBar}>
+            contact
+          </NavbarLinkExtended>
         </NavbarExtendedContainer>
       )}
     </NavbarContainer>
