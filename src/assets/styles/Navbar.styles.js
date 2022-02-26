@@ -28,7 +28,7 @@ export const NavbarContainer = styled.div`
   max-width: 1100px;
 `
 
-export const NavbarLogo = styled(LinkR)`
+export const NavLogo = styled(LinkR)`
   color: #fff;
   justify-self: flex-start;
   font-size: 1.5rem;
