@@ -1,67 +1,31 @@
 import React, { useState } from 'react'
-import Hamburger from 'hamburger-react'
+import { FaBars } from 'react-icons/fa'
 import {
+  Nav,
   NavbarContainer,
-  LeftContainer,
-  RightContainer,
-  NavbarLinkContainer,
-  NavbarExtendedContainer,
-  NavbarInnerContainer,
-  NavbarLink,
-  Logo,
-  OpenLinksButton,
-  NavbarLinkExtended,
+  NavbarLogo,
+  MobileIcon,
+  NavMenu,
+  NavLinks,
+  NavItem,
 } from '../assets/styles/Navbar.styles'
 import LogoImg from '../assets/images/logo.png'
 
 const Navbar = () => {
-  const [extendNavbar, setExtendNavbar] = useState(false)
-  const closeSideBar = () => {
-    setExtendNavbar(false)
-  }
   return (
-    <NavbarContainer extendNavbar={extendNavbar}>
-      <NavbarInnerContainer>
-        <LeftContainer>
-          <a href='/'>
-            <Logo src={LogoImg}></Logo>
-          </a>
-        </LeftContainer>
-        <RightContainer>
-          <NavbarLinkContainer>
-            <NavbarLink to='/'> home</NavbarLink>
-            <NavbarLink to='/about'> about</NavbarLink>
-            <NavbarLink to='/portfolio'> portfolio</NavbarLink>
-            <NavbarLink to='/resume'> resume</NavbarLink>
-            <NavbarLink to='/contact'> contact</NavbarLink>
-            <OpenLinksButton>
-              <Hamburger toggled={extendNavbar} toggle={setExtendNavbar} />
-
-              {/* {extendNavbar ? <>&#10005;</> : <Hamburger direction='right' />} */}
-            </OpenLinksButton>
-          </NavbarLinkContainer>
-        </RightContainer>
-      </NavbarInnerContainer>
-      {extendNavbar && (
-        <NavbarExtendedContainer>
-          <NavbarLinkExtended to='/' onClick={closeSideBar}>
-            home
-          </NavbarLinkExtended>
-          <NavbarLinkExtended to='/about' onClick={closeSideBar}>
-            about
-          </NavbarLinkExtended>
-          <NavbarLinkExtended to='/portfolio' onClick={closeSideBar}>
-            portfolio
-          </NavbarLinkExtended>
-          <NavbarLinkExtended to='/resume' onClick={closeSideBar}>
-            resume
-          </NavbarLinkExtended>
-          <NavbarLinkExtended to='/contact' onClick={closeSideBar}>
-            contact
-          </NavbarLinkExtended>
-        </NavbarExtendedContainer>
-      )}
-    </NavbarContainer>
+    <Nav>
+      <NavbarContainer>
+        <NavbarLogo to='/'>AliffAzfar</NavbarLogo>
+        <MobileIcon>
+          <FaBars />
+        </MobileIcon>
+        <NavMenu>
+          <NavItem>
+            <NavLinks to='/about'>about</NavLinks>
+          </NavItem>
+        </NavMenu>
+      </NavbarContainer>
+    </Nav>
   )
 }
 
