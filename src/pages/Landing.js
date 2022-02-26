@@ -10,20 +10,14 @@ import img2 from '../assets/images/7.jpg'
 
 const Landing = () => {
   return (
-    <div className='container page'>
-      <ReactCompareSlider
-        itemOne={
-          <LandingContainer>
-            <ReactCompareSliderImage srcSet={img1} alt='Image one' />
-          </LandingContainer>
-        }
-        itemTwo={
-          <LandingContainer>
-            <ReactCompareSliderImage srcSet={img2} alt='Image two' />
-          </LandingContainer>
-        }
-      />
-    </div>
+    <LandingContainer>
+      <div className='container'>
+        <ReactCompareSlider
+          itemOne={<ReactCompareSliderImage srcSet={img1} alt='Image one' />}
+          itemTwo={<ReactCompareSliderImage srcSet={img2} alt='Image two' />}
+        />
+      </div>
+    </LandingContainer>
   )
 }
 
