@@ -9,9 +9,13 @@ import {
   NavLinks,
   NavItem,
 } from '../assets/styles/Navbar.styles'
-import LogoImg from '../assets/images/logo.png'
+import { Link, animateScroll as scroll } from 'react-scroll'
 
 const Navbar = ({ toggle }) => {
+  const scrollToTop = () => {
+    scroll.scrollToTop()
+  }
+
   return (
     <Nav>
       <NavbarContainer>
@@ -21,19 +25,64 @@ const Navbar = ({ toggle }) => {
         </MobileIcon>
         <NavMenu>
           <NavItem>
-            <NavLinks to='Landing'>home</NavLinks>
+            <NavLinks
+              smooth={true}
+              offset={-70}
+              duration={500}
+              activeClass='active'
+              spy={true}
+              to='Landing'
+            >
+              home
+            </NavLinks>
           </NavItem>
           <NavItem>
-            <NavLinks to='about'>about</NavLinks>
+            <NavLinks
+              smooth={true}
+              offset={-70}
+              duration={500}
+              activeClass='active'
+              spy={true}
+              to='about'
+            >
+              about
+            </NavLinks>
           </NavItem>
           <NavItem>
-            <NavLinks to='portfolio'>portfolio</NavLinks>
+            <NavLinks
+              smooth={true}
+              offset={-70}
+              duration={500}
+              activeClass='active'
+              spy={true}
+              to='portfolio'
+            >
+              portfolio
+            </NavLinks>
           </NavItem>
           <NavItem>
-            <NavLinks to='resume'>resume</NavLinks>
+            <NavLinks
+              smooth={true}
+              offset={-70}
+              duration={500}
+              activeClass='active'
+              spy={true}
+              to='resume'
+            >
+              resume
+            </NavLinks>
           </NavItem>
           <NavItem>
-            <NavLinks to='contact'>contact</NavLinks>
+            <NavLinks
+              smooth={true}
+              offset={-70}
+              duration={500}
+              activeClass='active'
+              spy={true}
+              to='contact'
+            >
+              contact
+            </NavLinks>
           </NavItem>
         </NavMenu>
       </NavbarContainer>
